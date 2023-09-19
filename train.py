@@ -51,10 +51,8 @@ def plot_data(X, y, theta, mean, std):
           std : float - The standard deviation of the data.
     Returns: None, but a plot is displayed.
     """
-    # Draw the data
     plt.scatter(X, y)
 
-    # Draw the regression line
     x_line = np.linspace(min(X), max(X), 1000)
     y_line = theta[0] + theta[1] * ((x_line - mean) / std)
     plt.plot(x_line, y_line, 'r')
@@ -92,7 +90,6 @@ def main():
     np.save('mean.npy', mean)
     np.save('std.npy', std)
 
-    # Display plot (bonus)
     plot_data(X, y, theta, mean, std)
 
 if __name__ == "__main__":

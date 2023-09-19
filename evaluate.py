@@ -40,22 +40,14 @@ def main():
         print("Impossible d'évaluer le modèle - les valeurs nécessaires ne sont pas disponibles ou invalides")
         return
 
-	# Extract X and y from the dataset
     X = np.array(data['km']).reshape(-1,1)
     y = np.array(data['price'])
 
-	# Noormalize X to help the convergence of gradient descent
     X_norm = (X - mean) / std
-
-	# Add a column of 1s to X for the constant term
     X_norm = np.append(np.ones((X_norm.shape[0], 1)), X_norm, axis=1)
-
-    # Predictions
     y_pred = X_norm.dot(theta)
 
     mae, rmse = compute_metrics(y, y_pred)
-
-    # Calculate R^2
     r2 = compute_r2(y, y_pred)
 
     print("Mean Absolute Error (MAE): ", mae)
