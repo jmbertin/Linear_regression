@@ -47,3 +47,9 @@ Install the necessary Python packages by running the following command:
 ``python evaluate.py``
 
 - The script will print the MAE, RMSE, and R-squared values computed on the training dataset.
+
+----
+
+## Contribution
+If you encounter any bugs or wish to add features, please feel free to open an issue or submit a pull request.
+
